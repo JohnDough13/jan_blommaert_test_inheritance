@@ -14,15 +14,15 @@ public abstract class MagicMonster extends Monster {
         return magicPoints;
     }
 
-    public void setMagicPoints(int h) {
-        this.setMagicPoints(h);
+    public void setMagicPoints(int setMP) {
+        this.setMagicPoints(setMP);
     }
 
-    public void restoreMp(int h) {
-        this.restoreMp(h);
+    public void restoreMp(int restoreMP) {
+        this.restoreMp(restoreMP);
     }
 
-    public boolean useMp(int d) {
+    public boolean useMp(int useMP) {
         return true;
     }
 }

@@ -12,8 +12,9 @@ public abstract class MightMonster extends Monster {
     public int getRagePoints() {
         return ragePoints;
     }
+
     public void setRagePoints(int h){
-        setRagePoints(h);
+      setRagePoints(h);
     }
 
     public void restoreRp (int h){

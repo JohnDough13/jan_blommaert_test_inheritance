@@ -3,27 +3,32 @@ package magic.monster.game;
 public class Bear extends MightMonster {
     private int holeNr;
 
-    public Bear (){
+    public Bear() {
+        super(5, 50);
     }
 
-    public Bear (int hitpoints){
-        super(hitpoints);
-        getHitPoints();
+    public Bear(int hitpoints) {
+        super(5, hitpoints);
     }
 
-    public Bear (int hitpoints, int ragePoints){
-        super(hitpoints);
-        super(ragePoints);
+    public Bear(int hitpoints, int ragePoints) {
+        super(hitpoints, ragePoints);
     }
 
-    public Bear (int holeNr, int hitpoints, int ragePoints){
-        super(hitpoints);
-        super(ragePoints);
-        this.holeNr=holeNr;
+    public Bear(int holeNr, int hitpoints, int ragePoints) {
+        super(hitpoints, ragePoints);
+        this.holeNr = holeNr;
 
     }
 
-    public int bearClawAttack (){
-        return bearClawAttack();
+    public int bearClawAttack() {
+        if (super.useRp(8)) {
+            super.setRagePoints(super.getRagePoints() - 8);
+            System.out.println("Bear attacks! roar!!");
+            return 10;
+        } else {
+            System.out.println("Bear attacks! out of Rage points");
+            return 0;
+        }
     }
 }

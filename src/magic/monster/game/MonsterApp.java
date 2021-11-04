@@ -2,16 +2,42 @@ package magic.monster.game;
 
 public class MonsterApp {
     public static void main(String[] args) {
+        int round = 1;
+        int random = (Math.random() <= 0.5) ? 1 : 2;
 
-//        Bear = 50 hp / 5 rp
-//        Witch = 30 hp / 100 mp
+        Bear bear = new Bear(50, 5);
+        Witch witch = new Witch(30, 100);
 
-//        Moeten ombeurten elkaar kunnen aanvallen.
+        while (witch.getHitPoints() > 0 && bear.getHitPoints() > 0) {
+            System.out.println("Round " + round + "!");
+            if (random == 1) {
+                bear.takeDamage(witch.fireballAttack());
+                if (bear.getHitPoints() <= 0) {
+                    break;
+                } else {
+                    witch.takeDamage(bear.bearClawAttack());
+                }
+            } else {
+                witch.takeDamage(bear.bearClawAttack());
+                if (witch.getHitPoints() <= 0) {
+                    break;
+                } else {
+                    bear.takeDamage(witch.fireballAttack());
+                }
+            }
+            bear.restoreRp(5);
+            witch.restoreMp(4);
+            System.out.println(bear.toString());
+            System.out.println(witch.toString());
+            round++;
+            random = (Math.random() <= 0.5) ? 1 : 2;
+        }
 
-//        Iedere ‘beurt’ start met een aanval door een willekeurig monster, vervolgens valt het 2e monster
-//        aan. Tot slot krijgt aan het einde van een beurt de beer 5 rp en de heks 4 mp.(restore)
-
-//        Print aan het einde af wie de winnaar is, de beer of de heks.
-
+        System.out.println("And the winner is: The ");
+        if (witch.getHitPoints() > bear.getHitPoints()) {
+            System.out.println(witch.toString());
+        } else {
+            System.out.println(bear.toString());
+        }
     }
 }

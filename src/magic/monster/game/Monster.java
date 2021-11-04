@@ -5,7 +5,6 @@ public abstract class Monster {
     private int maxHP;
 
     public Monster(int maxHP) {
-        this.maxHP = maxHP;
 
     }
 
@@ -14,11 +13,14 @@ public abstract class Monster {
     }
 
     public int getMaxHP() {
-        return getMaxHP();
+      this.maxHP = getMaxHP();
+      return getMaxHP();
     }
 
     public int getHitPoints() {
+        this.hitPoints = getHitPoints();
         return getHitPoints();
+
     }
 
     public void setHitPoints(int h) {
@@ -32,5 +34,6 @@ public abstract class Monster {
     public boolean takeDamage(int d) {
         return true;
     }
+
 }
 
