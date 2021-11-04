@@ -20,7 +20,6 @@ public abstract class Monster {
     public int getHitPoints() {
         this.hitPoints = getHitPoints();
         return getHitPoints();
-
     }
 
     public void setHitPoints(int h) {
