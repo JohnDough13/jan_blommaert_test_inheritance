@@ -14,11 +14,11 @@ public abstract class MightMonster extends Monster {
     }
 
     public void setRagePoints(int h){
-      setRagePoints(h);
+      this.ragePoints = h;
     }
 
     public void restoreRp (int h){
-        restoreRp(h);
+        this.ragePoints = ragePoints + h;
     }
     public boolean useRp (int d){
         return true;

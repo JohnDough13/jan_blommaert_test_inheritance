@@ -5,21 +5,20 @@ public abstract class Monster {
     private int maxHP;
 
     public Monster(int maxHP) {
-
-    }
-
-    public void setMaxHP(int maxHP) {
+        this.hitPoints = maxHP;
         setMaxHP(maxHP);
     }
 
-    public int getMaxHP() {
-      this.maxHP = getMaxHP();
-      return getMaxHP();
+    public void setMaxHP(int maxHP) {
+        this.maxHP = maxHP;
     }
 
-    public int getHitPoints() {
-        this.hitPoints = getHitPoints();
-        return getHitPoints();
+    public int getMaxHP() {
+      return maxHP;
+    }
+
+    public int getHitPoints () {
+         return hitPoints;
     }
 
     public void setHitPoints(int h) {
